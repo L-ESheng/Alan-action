@@ -1,4 +1,5 @@
 import requests,base64,json,hashlib
+import time
 from Crypto.Cipher import AES
 def encrypt(key, text):
     cryptor = AES.new(key.encode('utf8'), AES.MODE_CBC, b'0102030405060708')
@@ -90,9 +91,10 @@ for x in object['recommend']:
         data2["json"]["wifi"]=0
         buffer.append(data2)
         count+=1
-        if count>=310:
+        #time.sleep(1)
+        if count>=600:
             break
-    if count>=310:
+    if count>=600:
         break
 url = "http://music.163.com/weapi/feedback/weblog"
 postdata={
@@ -101,8 +103,8 @@ postdata={
 res=s.post(url,protect(json.dumps(postdata)))
 object=json.loads(res.text,strict=False)
 if object['code']==200:
-    print("刷单成功！共"+str(count)+"首")
+    print("Alan刷单成功！共"+str(count)+"首")
     exit()
 else:
-    print("发生错误："+str(object['code'])+object['message'])
+    print("发生错误："+str(object['code'])+object['message']+"请联系Alan！")
     exit(object['code'])
