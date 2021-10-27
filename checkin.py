@@ -92,9 +92,9 @@ for x in object['recommend']:
         buffer.append(data2)
         count+=1
         #time.sleep(1)
-        if count>=600:
+        if count>=360:
             break
-    if count>=600:
+    if count>=360:
         break
 url = "http://music.163.com/weapi/feedback/weblog"
 postdata={
