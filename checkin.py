@@ -131,3 +131,4 @@ if object['code'] == 200:
 else:
     print("发生错误：" + str(object['code']) + object['message'] + "请联系Alan！")
     exit(object['code'])
+print("--------------------------------------------------------------------------\n"*2)
