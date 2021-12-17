@@ -127,8 +127,9 @@ res = s.post(url, protect(json.dumps(postdata)))
 object = json.loads(res.text, strict=False)
 if object['code'] == 200:
     print(f">>>@{logindata['phone']}<<<刷量成功！共" + str(count) + "首")
+    print("--------------------------------------------------------------------------\n"*2)
     exit()
 else:
     print("发生错误：" + str(object['code']) + object['message'] + "请联系Alan！")
+    print("--------------------------------------------------------------------------\n"*2)
     exit(object['code'])
-print("--------------------------------------------------------------------------\n"*2)
