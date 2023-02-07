@@ -21,7 +21,7 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: 3.7
-    - name: Lales
+    - name: 签到->执行任务
       run: |
         pip install -r requirements.txt
         
